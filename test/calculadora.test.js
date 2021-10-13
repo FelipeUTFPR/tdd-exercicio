@@ -13,7 +13,7 @@ describe('Desenvolvedor', () => {
             cargo: 'dev',
             
         });
-        expect(props.length).toBe(0);
+        expect(props.length).toBe(1);
         expect(props[0]).toBeDeepCloseTo({
             descontoVal:305,
             total: 2745
