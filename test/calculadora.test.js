@@ -46,32 +46,36 @@ describe('Desenvolvedor', () => {
 
     test('cliente sem nome lanca excecao', () => {
         expect(() => calculadora.montarPropostas({
+            
+            email: 'joaosilva@gmail.com',
             idade: 26,
-            salario: 10000.00,
-            valorFinanciado: 10000.00
+            salario: 2000.00,
+            cargo: 'dev',
         }))
             .toThrow('nome invalido');
     });
 
     test('cliente com salario negativo lanca excecao', () => {
         expect(() => calculadora.montarPropostas({
-            nome: 'Antonio Maria Oliveira',
-            idade: 26,
-            salario: -10000.00,
-            valorFinanciado: 10000.00
+            nome: 'Joao da Silva',
+            email: 'joaosilva@gmail.com',
+            salario: -2000.00,
+            cargo: 'dev',
         }))
             .toThrow('salario invalido');
     });
 
-    test('cliente com idade invalida lanca excecao', () => {
+    test('cliente com cargo inválido lanca excecao', () => {
         expect(() => calculadora.montarPropostas({
-            nome: 'Antonio Maria Oliveira',
-            idade: 77,
-            salario: 10000.00,
-            valorFinanciado: 10000.00
+            nome: 'Joao da Silva',
+            email: 'joaosilva@gmail.com',
+            salario: 2000.00,
+            cargo: 'de',
         }))
-            .toThrow('idade invalida');
+            .toThrow('cargo invalido');
     });
+
+    
 
 
     
@@ -83,25 +87,9 @@ describe('Desenvolvedor', () => {
 
     
 
-    test('cliente com idade invalida lanca excecao', () => {
-        expect(() => calculadora.montarPropostas({
-            nome: 'Antonio Maria Oliveira',
-            idade: 77,
-            salario: 10000.00,
-            valorFinanciado: 10000.00
-        }))
-            .toThrow('idade invalida');
-    });
+    
 
-    test('cliente com valor financiado invalido lanca excecao', () => {
-        expect(() => calculadora.montarPropostas({
-            nome: 'Antonio Maria Oliveira',
-            idade: 66,
-            salario: 10000.00,
-            valorFinanciado: 100000.10
-        }))
-            .toThrow('valor financiado invalido');
-    });
+    
 
     */
 });
