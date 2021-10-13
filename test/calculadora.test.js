@@ -150,26 +150,26 @@ describe('DBA', () => {
         });
         expect(props.length).toBe(1);
         expect(props[0]).toBeDeepCloseTo({
-            descontoVal:305,
-            total: 2745
+            descontoVal:750,
+            total: 2250
             
         }, 2);        
         
 
     
     });
-    test('salario menor 3000', () => {
+    test('salario menor 2000', () => {
         const props = calculadora.montarPropostas({
             nome: 'Fernando souza',
             email: 'fernandosouza@gmail.com',
-            salario: 3000.00,
+            salario: 1000.00,
             cargo: 'dba',
             
         });
         expect(props.length).toBe(1);
         expect(props[0]).toBeDeepCloseTo({
-            descontoVal:200,
-            total: 1800
+            descontoVal:150,
+            total: 850
             
         }, 2);        
         
