@@ -13,22 +13,13 @@ describe('Desenvolvedor', () => {
             cargo: 'dev',
             
         });
-        expect(props.length).toBe(3);
+        expect(props.length).toBe(0);
         expect(props[0]).toBeDeepCloseTo({
             descontoVal:305,
             total: 2745
             
         }, 2);        
-        expect(props[1]).toBeDeepCloseTo({
-            descontoVal:305,
-            total: 2745
-            
-        }, 2);
-        expect(props[2]).toBeDeepCloseTo({
-            descontoVal:305,
-            total: 2745
-            
-        }, 2);
+        
 
     
     });
