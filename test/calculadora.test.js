@@ -178,3 +178,83 @@ describe('DBA', () => {
     });
 
 });
+
+describe('Test', () => {
+    test('salario maior ou igual 2000', () => {
+        const props = calculadora.montarPropostas({
+            nome: 'Fernando souza',
+            email: 'fernandosouza@gmail.com',
+            salario: 3000.00,
+            cargo: 'dba',
+            
+        });
+        expect(props.length).toBe(1);
+        expect(props[0]).toBeDeepCloseTo({
+            descontoVal:750,
+            total: 2250
+            
+        }, 2);        
+        
+
+    
+    });
+    test('salario menor 2000', () => {
+        const props = calculadora.montarPropostas({
+            nome: 'Fernando souza',
+            email: 'fernandosouza@gmail.com',
+            salario: 1000.00,
+            cargo: 'dba',
+            
+        });
+        expect(props.length).toBe(1);
+        expect(props[0]).toBeDeepCloseTo({
+            descontoVal:150,
+            total: 850
+            
+        }, 2);        
+        
+
+    
+    });
+
+});
+
+describe('Gerente', () => {
+    test('salario maior ou igual 5000', () => {
+        const props = calculadora.montarPropostas({
+            nome: 'Fernando souza',
+            email: 'fernandosouza@gmail.com',
+            salario: 6000.00,
+            cargo: 'dba',
+            
+        });
+        expect(props.length).toBe(1);
+        expect(props[0]).toBeDeepCloseTo({
+            descontoVal:750,
+            total: 2250
+            
+        }, 2);        
+        
+
+    
+    });
+    test('salario menor 5000', () => {
+        const props = calculadora.montarPropostas({
+            nome: 'Fernando souza',
+            email: 'fernandosouza@gmail.com',
+            salario: 4000.00,
+            cargo: 'dba',
+            
+        });
+        expect(props.length).toBe(1);
+        expect(props[0]).toBeDeepCloseTo({
+            descontoVal:150,
+            total: 850
+            
+        }, 2);        
+        
+
+    
+    });
+
+});
