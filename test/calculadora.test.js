@@ -36,66 +36,13 @@ describe('Desenvolvedor', () => {
             descontoVal:200,
             total: 1800
             
-        }, 2);        
+        }, 2);     
+        
+        
         
 
     
     });
-/*  
-    test('cliente com salario > 1000 e < 5000', () => {
-        const props = calculadora.montarPropostas({
-            nome: 'Maria Oliveira',
-            idade: 26,
-            salario: 2000.00,
-            valorFinanciado: 10000.00
-        });
-        expect(props.length).toBe(3);
-        expect(props[0]).toBeDeepCloseTo({
-            total: 13000.00,
-            numeroParcelas: 2,
-            valorDaParcela: 6500.00
-        }, 2);
-        expect(props[1]).toBeDeepCloseTo({
-            total: 15000.00,
-            numeroParcelas: 4,
-            valorDaParcela: 3750.00
-        }, 2);
-        expect(props[2]).toBeDeepCloseTo({
-            total: 15000.00,
-            numeroParcelas: 10,
-            valorDaParcela: 1500.00
-        }, 2);                
-    });
-
-    test('cliente com salario > 5000', () => {
-        const props = calculadora.montarPropostas({
-            nome: 'Antonio Maria Oliveira',
-            idade: 26,
-            salario: 10000.00,
-            valorFinanciado: 10000.00
-        });
-        expect(props.length).toBe(4);
-        expect(props[0]).toBeDeepCloseTo({
-            total: 11000.00,
-            numeroParcelas: 2,
-            valorDaParcela: 5500.00
-        }, 2);
-        expect(props[1]).toBeDeepCloseTo({
-            total: 13000.00,
-            numeroParcelas: 4,
-            valorDaParcela: 3250.00
-        }, 2);
-        expect(props[2]).toBeDeepCloseTo({
-            total: 13000.00,
-            numeroParcelas: 10,
-            valorDaParcela: 1300.00
-        }, 2);                
-        expect(props[3]).toBeDeepCloseTo({
-            total: 14000.00,
-            numeroParcelas: 20,
-            valorDaParcela: 700.00
-        }, 2);                
-    });    
 
     test('cliente sem nome lanca excecao', () => {
         expect(() => calculadora.montarPropostas({
@@ -115,6 +62,26 @@ describe('Desenvolvedor', () => {
         }))
             .toThrow('salario invalido');
     });
+
+    test('cliente com idade invalida lanca excecao', () => {
+        expect(() => calculadora.montarPropostas({
+            nome: 'Antonio Maria Oliveira',
+            idade: 77,
+            salario: 10000.00,
+            valorFinanciado: 10000.00
+        }))
+            .toThrow('idade invalida');
+    });
+
+
+    
+
+/*  
+       
+
+    
+
+    
 
     test('cliente com idade invalida lanca excecao', () => {
         expect(() => calculadora.montarPropostas({
@@ -230,8 +197,8 @@ describe('Gerente', () => {
         });
         expect(props.length).toBe(1);
         expect(props[0]).toBeDeepCloseTo({
-            descontoVal:750,
-            total: 2250
+            descontoVal:1500,
+            total: 4500
             
         }, 2);        
         
@@ -248,8 +215,8 @@ describe('Gerente', () => {
         });
         expect(props.length).toBe(1);
         expect(props[0]).toBeDeepCloseTo({
-            descontoVal:150,
-            total: 850
+            descontoVal:1000,
+            total: 3000
             
         }, 2);        
         
