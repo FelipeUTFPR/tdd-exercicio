@@ -9,21 +9,24 @@ describe('Desenvolvedor', () => {
         const props = calculadora.montarPropostas({
             nome: 'Joao da Silva',
             email: 'joaosilva@gmail.com',
-            salarioBase: 3050.00,
+            salario: 3050.00,
             cargo: 'dev',
             
         });
         expect(props.length).toBe(3);
         expect(props[0]).toBeDeepCloseTo({
-            total: 4000.00,
+            descontoVal:305,
+            total: 2745
             
         }, 2);        
         expect(props[1]).toBeDeepCloseTo({
-            total: 4000.00,
+            descontoVal:305,
+            total: 2745
             
         }, 2);
         expect(props[2]).toBeDeepCloseTo({
-            total: 4000.00,
+            descontoVal:305,
+            total: 2745
             
         }, 2);
 
